@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="abdullah.elamien.bloodbank.ui.RegisterActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@color/white" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/registerParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/registerBackgroundColor">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/loginHeaderImageView"
+                    android:layout_width="@dimen/register_image_picker_width"
+                    android:layout_height="0dp"
+                    android:layout_margin="@dimen/register_image_picker_margin"
+                    android:src="@drawable/app_icon"
+                    app:layout_constraintDimensionRatio="h,1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/registerLabel"
+                    style="@style/registerLabelStyle"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/register_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loginHeaderImageView" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registerNameEditText"
+                    style="@style/registerNameStyle"
+                    android:hint="@string/register_name_edittext_hint"
+
+                    app:layout_constraintBottom_toTopOf="@+id/registerEmailEditText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerLabel" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/registerEmailEditText"
+                    style="@style/registerEmailStyle"
+                    android:hint="@string/register_email_edittext_hint"
+                    app:layout_constraintBottom_toTopOf="@+id/loginPasswordTextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerNameEditText" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loginPasswordTextInputLayout"
+                    style="@style/registerPasswordInputLayoutStyle"
+                    app:hintEnabled="false"
+                    app:layout_constraintBottom_toTopOf="@+id/registerPasswordConfirmTextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerEmailEditText"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/registerPasswordEditText"
+                        style="@style/registerPasswordEditTextStyle"
+                        android:hint="@string/register_eddittext_password_hint" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/registerPasswordConfirmTextInputLayout"
+                    style="@style/registerPasswordConfirmInputLayoutStyle"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/loginPasswordTextInputLayout"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/registerPasswordConfirmEditText"
+                        style="@style/registerPasswordConfirmEditTextStyle"
+                        android:hint="@string/register_confirm_password_hint" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/newMembershipLabel"
+                    style="@style/existedMembershipLabelStyle"
+                    android:text="@string/existed_membership_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerPasswordConfirmTextInputLayout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/registerButton"
+                    style="@style/ButtonStyle"
+                    android:layout_width="0dp"
+                    android:onClick="@{handlers::onRegisterButtonClick}"
+                    android:text="@string/register_button_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/newMembershipLabel" />
+
+                <TextView
+                    android:id="@+id/orRegisterProviderLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/or_label_margin"
+                    android:text="@string/or_label"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="@dimen/or_label_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/facebookRegister"
+                    android:layout_width="@dimen/facebook_login_button_width"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/facebook_login_button_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/orRegisterProviderLabel" />
+
+                <ImageButton
+                    android:id="@+id/googleSignInImageButton"
+                    android:layout_width="@dimen/google_login_button_width"
+                    android:layout_height="@dimen/google_login_button_height"
+                    android:layout_margin="@dimen/google_login_button_margin"
+                    android:background="@drawable/google_sign_in_state"
+                    android:onClick="@{handlers::onGoogleSignInClick}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/facebookRegister" />
+
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/registerGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:constraint_referenced_ids="googleSignInImageButton,
+facebookRegister,orRegisterProviderLabel,registerButton,newMembershipLabel,
+registerPasswordConfirmTextInputLayout,loginPasswordTextInputLayout,
+registerEmailEditText,registerNameEditText,registerLabel" />
+
+                <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/loadingIndicator"
+                    style="@style/SpinKitView.Large.FadingCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/loading_indicator_margin"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone"
+                    app:SpinKit_Color="@color/secondaryColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/facebookRegister"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

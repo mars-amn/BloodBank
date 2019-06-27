@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/notification_key"
+        android:summaryOff="@string/notification_summary_off"
+        android:summaryOn="@string/notification_summary_on"
+        android:title="@string/notification_preference_label"
+        app:iconSpaceReserved="false" />
+
+    <ListPreference
+        android:defaultValue="@string/arabic_language_value"
+        android:entries="@array/language_preference_entries"
+        android:entryValues="@array/language_preference_values"
+        android:key="@string/language_key"
+        android:summary="@string/language_preference_summary"
+        android:title="@string/language_preference_label"
+        app:iconSpaceReserved="false" />
+
+</PreferenceScreen>

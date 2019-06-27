@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="abdullah.elamien.bloodbank.ui.DonateActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@color/primaryDarkColor" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/loadingIndicator"
+                    style="@style/SpinKitView.Large.FadingCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/loading_indicator_margin"
+                    android:visibility="gone"
+                    app:SpinKit_Color="@color/secondaryColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/group"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/donorNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/donor_name_edittext_height"
+                    android:layout_margin="@dimen/donor_name_margin"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:fontFamily="@font/cairo"
+                    android:hint="@string/donor_name_hint"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/donorAgeEditText"
+                    android:layout_width="@dimen/donor_age_edittext_width"
+                    android:layout_height="@dimen/donor_age_edittext_height"
+                    android:layout_margin="@dimen/donor_age_margin"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/donor_age_hint"
+                    android:inputType="number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/donorNameEditText" />
+
+                <EditText
+                    android:id="@+id/donorPhoneEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/donor_phone_number_edittext_height"
+                    android:layout_margin="@dimen/donor_phone_number_margin"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/donor_phone_number_hint"
+                    android:inputType="phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/donorAgeEditText"
+                    app:layout_constraintTop_toBottomOf="@+id/donorNameEditText" />
+
+                <TextView
+                    android:id="@+id/pickAddressDonorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pick_address_label_margin_start"
+                    android:text="@string/pick_a_city_shoutout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/donorBioEditText" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/addressChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_address_chip_margin"
+                    app:chipSpacing="@dimen/shoutout_creation_address_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickAddressDonorLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/arishChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarish_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bearAlAbdChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bear_al_abd_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/nekhelChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nekhel_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/sheikhZouidChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sheikh_zould_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/rafahChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rafah_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hasanaChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hasana_chip_label" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/pickBloodTypeDonorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pick_blood_type_label_margin_start"
+                    android:layout_marginTop="@dimen/pick_blood_type_label_margin_top"
+                    android:text="@string/pick_a_blood_type_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressChipGroup" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/bloodTypeChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_blood_type_chip_margin"
+                    app:chipSpacing="@dimen/shoutout_creation_blood_type_chip_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickBloodTypeDonorLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_minus_blood_type_chip_label" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/becomeADonorButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_button_margin"
+                    android:background="@drawable/button_background"
+                    android:onClick="@{handlers::onBecomeADonorButtonClick}"
+                    android:text="@string/become_a_donor_button_label"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bloodTypeChipGroup" />
+
+                <EditText
+                    android:id="@+id/donorBioEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/donor_bio_edittext_height"
+                    android:layout_margin="@dimen/donor_bio_edittext_margin"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/donor_bio_edittext_hint"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/donorPhoneEditText" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:constraint_referenced_ids="donorBioEditText,becomeADonorButton,
+bloodTypeChipGroup,pickBloodTypeDonorLabel,addressChipGroup,pickAddressDonorLabel
+,donorPhoneEditText,donorAgeEditText,donorNameEditText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

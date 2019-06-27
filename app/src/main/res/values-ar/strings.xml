@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">بنك الدم</string>
+    <string name="register_label">Register</string>
+    <string name="register_name_edittext_hint">الاسم</string>
+    <string name="register_email_edittext_hint">البريد الالكتروني</string>
+    <string name="register_eddittext_password_hint">كلمة السر</string>
+    <string name="register_confirm_password_hint">أعد كتابة كلمة السر</string>
+    <string name="existed_membership_label">Already a member? Sign in.</string>
+    <string name="register_button_label">التسجيل</string>
+
+    <string name="error_msg">Sorry, Something went wrong</string>
+
+    <string name="or_label">أو</string>
+    <string name="login_label">دخول</string>
+    <string name="new_membership_label">Don\'t have account yet? Register</string>
+    <string name="login_button_label">تسجيل الدخول</string>
+    <string name="alarish_chip_label">العريش</string>
+    <string name="bear_al_abd_chip_label">بئر العبد</string>
+    <string name="nekhel_chip_label">نخل</string>
+    <string name="sheikh_zould_chip_label">الشيخ زويد</string>
+    <string name="rafah_chip_label">رفح</string>
+    <string name="hasana_chip_label">الحسنة</string>
+    <string name="a_plus_blood_type_chip_label">A+</string>
+    <string name="a_minus_blood_type_chip_label">A-</string>
+    <string name="b_plus_blood_type_chip_label">B+</string>
+    <string name="b_minus_blood_type_chip_label">B-</string>
+    <string name="o_plus_blood_type_chip_label">O+</string>
+    <string name="o_minus_blood_type_chip_label">O-</string>
+    <string name="ab_plus_blood_type_chip_label">AB+</string>
+    <string name="ab_minus_blood_type_chip_label">AB-</string>
+    <string name="create_shoutout_button_label">قم بإنشاء نداء</string>
+    <string name="pick_a_blood_type_label">اختر فصيلة الدم</string>
+    <string name="pick_a_city_shoutout">اختر المدينة</string>
+    <string name="shoutout_description_hint">قم بوصف حالتك</string>
+    <string name="shoutout_address_hint">العنوان بالتفصيل</string>
+    <string name="shoutout_phone_number_hint">رقم الهاتف</string>
+    <string name="shoutout_name_hint">الاسم</string>
+    <string name="all_blood_type_chip_label">الكل</string>
+    <string name="list_item_shoutout_call_user_phone_content_description">Call User</string>
+    <string name="list_item_shoutout_msg_user_whatsapp_content_description">Message authModel through WhatsApp</string>
+    <string name="list_item_shoutout_msg_user_sms_content_description">Send an SMS to authModel</string>
+    <string name="navigation_close">Close</string>
+    <string name="navigation_open">Open</string>
+    <string name="become_a_donor_button_label">قم بالتطوع</string>
+    <string name="donor_phone_number_hint">رقم الهاتف</string>
+    <string name="donor_age_hint">العمر</string>
+    <string name="donor_name_hint">الاسم</string>
+    <string name="donor_bio_edittext_hint">اكتب لنا القليل عنك</string>
+    <string name="becoming_a_donor_greeting_title">مبروك!</string>
+    <string name="becoming_a_donor_greeting_msg">شكراً لاتخاذك تلك الخطوة</string>
+    <string name="shoutout_creation_successfully_title">نجاح!</string>
+    <string name="shoutout_creation_success_msg">لقد قمت بإنشاء نداء بنجاح، نتمنى لك ولأسرتك الصحة والعافية</string>
+    <string name="create_shoutout_label">قم بإنشاء نداء</string>
+    <string name="donate_label">قم بالتبرع</string>
+    <string name="profile_header_user_name">User Name</string>
+    <string name="profile_header_user_email_com">authModel@email.com</string>
+    <string name="search_for_donors_fab_label">بحث عن متطوعين</string>
+    <string name="search_donors_label">بحث</string>
+    <string name="existed_donor_dialog_text_msg">لقد قمت بالتطوع مسبقاً</string>
+    <string name="existed_donor_dialog_title_msg">Oops…</string>
+    <string name="join_donors_sub_text">قم بالانضمام لمجتمع المتطوعين من خلال نقرة واحدة</string>
+    <string name="search_donors_sub_text">ابحث عن متبرعين قريبين منك</string>
+    <string name="shoutout_sub_text">قم بإنشاء نداء للمجتمع وتنبيههم ليقدموا لك المساعدة</string>
+    <string name="settings_label">الإعدادات</string>
+    <string name="notification_summary_on">مفعلة</string>
+    <string name="notification_summary_off">غير مفعلة</string>
+    <string name="arabic_language_name">العربية</string>
+    <string name="english_language_name">الإنجليزية</string>
+    <string name="notification_preference_label">الإشعارات</string>
+    <string name="language_preference_summary">قم بتغيير لغة التطبيق</string>
+    <string name="language_preference_label">اللغة</string>
+    <string name="settings_action_bar_label">إعدادات التطبيق</string>
+
+
+    <string name="donate_activity_label">تبرع</string>
+    <string name="login_activity_label">تسجيل الدخول</string>
+    <string name="register_activity_label">إنشاء حساب جديد</string>
+    <string name="search_activity_label">بحث عن متبرعين</string>
+    <string name="shoutout_activity_label">إنشاء نداء</string>
+
+    <string name="whatsapp_error_msg">تطبيق الواتساب ليس منصباً</string>
+    <string name="hi_share_shoutout_sms">السلام عليكم</string>
+    <string name="can_help_share_shoutout_msg">، انا أقدر اساعدك!</string>
+    <string name="share_title">شارك النداء</string>
+    <string name="hey_there_share_shoutout_first_part">السلام عليكم،</string>
+    <string name="hey_thee_share_shoutout_second_part">يحتاج للمساعدة في التبرع بالدم، تواصل معه عبر</string>
+    <string name="hi_donor_sms_first_part">السلام عليكم</string>
+    <string name="hi_donor_sms_second_part">، أحتاج لمساعدتك في التبرع بالدم!</string>
+    <string name="about_activity_label">عن التطبيق</string>
+
+    <string name="about_menu_label">عن التطبيق</string>
+    <string name="about_label">بنك دم - العريش هو خدمة اونلاين تقوم على التوفيق بين المتبرعين والمرضى
+    يقوم المتبرعين بتسجيل بياناتهم عن طريق التسجيل كـ متبرع من خلال قاعدة البيانات في خطوات قليلة وسهلة
+    ليتمكن المرضى من البحث في نطاق المدينة ذات العنوان وفصيلة الدم</string>
+    <string name="logout_menu_label">تسجيل الخروج</string>
+
+</resources>

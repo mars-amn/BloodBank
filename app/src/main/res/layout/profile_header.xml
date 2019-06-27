@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileHeaderImage"
+        android:layout_width="@dimen/profile_header_user_image_width"
+        android:layout_height="@dimen/profile_header_user_image_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/app_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profileHeaderUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/profile_header_user_name_margin_start"
+        android:layout_marginLeft="@dimen/profile_header_user_name_margin_left"
+        android:layout_marginTop="@dimen/profile_header_user_name_margin_top"
+        android:text="@string/profile_header_user_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/secondaryLightColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileHeaderImage" />
+
+    <TextView
+        android:id="@+id/profileHeaderUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/profile_header_user_email_margin_start"
+        android:layout_marginLeft="@dimen/profile_header_user_email_margin_left"
+        android:layout_marginTop="@dimen/profile_header_user_email_margin_top"
+        android:layout_marginBottom="@dimen/profile_header_user_email_margin_bottom"
+        android:text="@string/profile_header_user_email_com"
+        android:textColor="@color/secondaryColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileHeaderUserName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="donor"
+            type="abdullah.elamien.bloodbank.models.Donor" />
+
+        <variable
+            name="handler"
+            type="abdullah.elamien.bloodbank.adapters.SearchAdapter.SearchViewHolder" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/list_item_shoutout_parent_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:stateListAnimator="@animator/left_on_touch"
+        app:cardCornerRadius="@dimen/list_item_shoutout_parent_corner_raduis"
+        app:cardElevation="@dimen/list_item_shoutout_parent_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/listItemSearchImage"
+                android:layout_width="@dimen/list_item_search_donors_image_width"
+                android:layout_height="@dimen/list_item_search_donors_image_height"
+                android:layout_margin="@dimen/list_item_search_donors_image_margin"
+                android:layout_marginBottom="8dp"
+                app:donorImage="@{imageUrl}"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemSearchAge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/listItemSearchName" />
+
+            <TextView
+                android:id="@+id/listItemSearchName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{donor.name}"
+                app:layout_constraintStart_toEndOf="@+id/listItemSearchImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/listItemSearchAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{String.valueOf(donor.age)}"
+                app:layout_constraintStart_toEndOf="@+id/listItemSearchImage"
+                app:layout_constraintTop_toBottomOf="@+id/listItemSearchName" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/listItemSearchBloodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/list_item_shoutout_blood_type_chip_margin"
+                android:text="@{donor.bloodType}"
+                app:chipBackgroundColor="@drawable/chip_background"
+                app:chipStrokeColor="@color/secondaryDarkColor"
+                app:chipStrokeWidth="0.5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/listItemSearchAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/list_item_shoutout_address_chip_margin_end"
+                android:text="@{donor.address}"
+                app:chipBackgroundColor="@drawable/chip_background"
+                app:chipStrokeColor="@color/secondaryDarkColor"
+                app:chipStrokeWidth="0.5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemSearchBloodType"
+                app:layout_constraintEnd_toStartOf="@+id/listItemSearchBloodType"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/listItemSearchName"
+                app:layout_constraintTop_toTopOf="@+id/listItemSearchBloodType"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/listItemSearchBio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/search_list_item_bio_margin"
+                android:text="@{donor.bio}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listItemSearchImage" />
+
+            <ImageButton
+                android:id="@+id/listItemSearchCallButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{handler::onCallButtonClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listItemSearchBio"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <ImageButton
+                android:id="@+id/listItemSearchWhatsAppButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{handler::onWhatsAppButtonClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemSearchCallButton"
+                app:layout_constraintStart_toEndOf="@+id/listItemSearchCallButton"
+                app:layout_constraintTop_toTopOf="@+id/listItemSearchCallButton"
+                app:srcCompat="@drawable/ic_whatsapp" />
+
+            <ImageButton
+                android:id="@+id/listItemSearchSMSButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{handler::onSMSButtonClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemSearchWhatsAppButton"
+                app:layout_constraintStart_toEndOf="@+id/listItemSearchWhatsAppButton"
+                app:layout_constraintTop_toTopOf="@+id/listItemSearchWhatsAppButton"
+                app:srcCompat="@drawable/ic_sms" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

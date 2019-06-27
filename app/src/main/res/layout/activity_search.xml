@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="abdullah.elamien.bloodbank.ui.SearchActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@color/primaryDarkColor" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/pickAddressDonorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pick_address_label_margin_start"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/pick_a_city_shoutout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/addressChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_address_chip_margin"
+                    app:chipSpacing="@dimen/shoutout_creation_address_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickAddressDonorLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/arishChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarish_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bearAlAbdChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bear_al_abd_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/nekhelChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nekhel_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/sheikhZouidChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sheikh_zould_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/rafahChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rafah_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hasanaChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hasana_chip_label" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/pickBloodTypeDonorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pick_blood_type_label_margin_start"
+                    android:layout_marginTop="@dimen/pick_blood_type_label_margin_top"
+                    android:text="@string/pick_a_blood_type_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressChipGroup" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/bloodTypeChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_blood_type_chip_margin"
+                    app:chipSpacing="@dimen/shoutout_creation_blood_type_chip_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickBloodTypeDonorLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_minus_blood_type_chip_label" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/searchDonorsButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_button_margin"
+                    android:background="@drawable/button_background"
+                    android:onClick="@{handlers::onSearchDonorsButtonClick}"
+                    android:text="@string/search_donors_label"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondaryTextColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bloodTypeChipGroup" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchDonorsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/searchDonorsButton" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

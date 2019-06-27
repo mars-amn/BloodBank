@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="shoutout"
+            type="abdullah.elamien.bloodbank.models.Shoutout" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="handlers"
+            type="abdullah.elamien.bloodbank.adapters.ShoutoutAdapter.ShoutoutViewHolder" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/list_item_shoutout_parent_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:stateListAnimator="@animator/left_on_touch"
+        app:cardCornerRadius="@dimen/list_item_shoutout_parent_corner_raduis"
+        app:cardElevation="@dimen/list_item_shoutout_parent_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/listItemShoutoutUserImage"
+                android:layout_width="@dimen/list_item_shoutout_image_width"
+                android:layout_height="@dimen/list_item_shoutout_image_height"
+                android:layout_margin="@dimen/list_item_shoutout_image_margin"
+                android:src="@drawable/app_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:profileImage="@{imageUrl}" />
+
+            <TextView
+                android:id="@+id/listItemShoutoutUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_shoutout_name_margin_start"
+                android:layout_marginTop="@dimen/list_item_shoutout_name_margin_top"
+                android:text="@{shoutout.name}"
+                app:layout_constraintStart_toEndOf="@+id/listItemShoutoutUserImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/listItemShoutoutDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_shoutout_date_margin_start"
+                android:text="@{shoutout.date}"
+                app:layout_constraintStart_toEndOf="@+id/listItemShoutoutUserImage"
+                app:layout_constraintTop_toBottomOf="@+id/listItemShoutoutUserName" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/listItemShoutoutUserNeededBloodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/list_item_shoutout_blood_type_chip_margin"
+                android:text="@{shoutout.bloodType}"
+                app:chipBackgroundColor="@drawable/chip_background"
+                app:chipStrokeColor="@color/secondaryDarkColor"
+                app:chipStrokeWidth="0.5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/listItemShoutoutUserAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/list_item_shoutout_address_chip_margin_end"
+                android:text="@{shoutout.city}"
+                app:chipBackgroundColor="@drawable/chip_background"
+                app:chipStrokeColor="@color/secondaryDarkColor"
+                app:chipStrokeWidth="0.5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemShoutoutUserNeededBloodType"
+                app:layout_constraintEnd_toStartOf="@+id/listItemShoutoutUserNeededBloodType"
+                app:layout_constraintTop_toTopOf="@+id/listItemShoutoutUserNeededBloodType"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/listItemShoutoutUserDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_shoutout_description_margin_start"
+                android:layout_marginTop="@dimen/list_item_shoutout_description_margin_top"
+                android:layout_marginEnd="@dimen/list_item_shoutout_description_margin_end"
+                android:text="@{shoutout.description}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listItemShoutoutUserImage" />
+
+            <TextView
+                android:id="@+id/listItemShoutoutUserSpecificAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/list_item_shoutout_user_specific_address_margin"
+                android:text="@{shoutout.specificAddress}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listItemShoutoutUserDescription" />
+
+            <ImageButton
+                android:id="@+id/listItemShoutoutUserPhoneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/list_item_shoutout_call_user_phone_margin"
+                android:layout_marginTop="@dimen/list_item_shoutout_call_user_phone_margin_top"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/list_item_shoutout_call_user_phone_content_description"
+                android:onClick="@{handlers::onPhoneButtonClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listItemShoutoutUserSpecificAddress"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <ImageButton
+                android:id="@+id/listItemShoutoutUserWhatsappButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_shoutout_msg_user_whatsapp_margin_start"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/list_item_shoutout_msg_user_whatsapp_content_description"
+                android:onClick="@{handlers::onWhatsAppButtonClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemShoutoutUserPhoneButton"
+                app:layout_constraintStart_toEndOf="@+id/listItemShoutoutUserPhoneButton"
+                app:layout_constraintTop_toTopOf="@+id/listItemShoutoutUserPhoneButton"
+                app:srcCompat="@drawable/ic_whatsapp" />
+
+            <ImageButton
+                android:id="@+id/listItemShoutoutUserSMSButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_shoutout_msg_user_sms_margin_start"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/list_item_shoutout_msg_user_sms_content_description"
+                android:onClick="@{handlers::onSMSButtonClick}"
+                app:layout_constraintBottom_toBottomOf="@+id/listItemShoutoutUserWhatsappButton"
+                app:layout_constraintStart_toEndOf="@+id/listItemShoutoutUserWhatsappButton"
+                app:layout_constraintTop_toTopOf="@+id/listItemShoutoutUserWhatsappButton"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_sms" />
+
+            <ImageButton
+                android:id="@+id/listItemShoutoutShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{handlers::onShareButtonClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/listItemShoutoutUserSMSButton"
+                app:srcCompat="@drawable/ic_share" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
+

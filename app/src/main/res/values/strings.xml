@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Blood Bank</string>
+    <string name="register_label">Register</string>
+    <string name="register_name_edittext_hint">Name</string>
+    <string name="register_email_edittext_hint">E-mail</string>
+    <string name="register_eddittext_password_hint">Password</string>
+    <string name="register_confirm_password_hint">Confirm Password</string>
+    <string name="existed_membership_label">Already a member? Sign in.</string>
+    <string name="register_button_label">Register</string>
+
+    <!--facebook related keys-->
+    <!--todo: replace with real keys-->
+    <string name="facebook_app_id" translatable="false">type your own</string>
+    <string name="fb_login_protocol_scheme" translatable="false">type your own</string>
+
+    <string name="error_msg">Sorry, Something went wrong</string>
+
+    <string name="web_api_key" translatable="false">type your own</string>
+    <string name="or_label">or</string>
+    <string name="login_label">Login</string>
+    <string name="new_membership_label">Don\'t have account yet? Register</string>
+    <string name="login_button_label">Login</string>
+    <string name="alarish_chip_label">العريش</string>
+    <string name="bear_al_abd_chip_label">بئر العبد</string>
+    <string name="nekhel_chip_label">نخل</string>
+    <string name="sheikh_zould_chip_label">الشيخ زويد</string>
+    <string name="rafah_chip_label">رفح</string>
+    <string name="hasana_chip_label">الحسنة</string>
+    <string name="a_plus_blood_type_chip_label">A+</string>
+    <string name="a_minus_blood_type_chip_label">A-</string>
+    <string name="b_plus_blood_type_chip_label">B+</string>
+    <string name="b_minus_blood_type_chip_label">B-</string>
+    <string name="o_plus_blood_type_chip_label">O+</string>
+    <string name="o_minus_blood_type_chip_label">O-</string>
+    <string name="ab_plus_blood_type_chip_label">AB+</string>
+    <string name="ab_minus_blood_type_chip_label">AB-</string>
+    <string name="create_shoutout_button_label">Create Shoutout</string>
+    <string name="pick_a_blood_type_label">Pick a blood type</string>
+    <string name="pick_a_city_shoutout">Pick a city</string>
+    <string name="shoutout_description_hint">Description</string>
+    <string name="shoutout_address_hint">Address</string>
+    <string name="shoutout_phone_number_hint">Phone Number</string>
+    <string name="shoutout_name_hint">Name</string>
+    <string name="all_blood_type_chip_label">ALL</string>
+    <string name="list_item_shoutout_call_user_phone_content_description">Call User</string>
+    <string name="list_item_shoutout_msg_user_whatsapp_content_description">Message authModel through WhatsApp</string>
+    <string name="list_item_shoutout_msg_user_sms_content_description">Send an SMS to authModel</string>
+    <string name="navigation_close">Close</string>
+    <string name="navigation_open">Open</string>
+    <string name="become_a_donor_button_label">Become a donor</string>
+    <string name="donor_phone_number_hint">Phone Number</string>
+    <string name="donor_age_hint">Age</string>
+    <string name="donor_name_hint">Name</string>
+    <string name="donor_bio_edittext_hint">Tell us about yourself</string>
+    <string name="becoming_a_donor_greeting_title">Congratulations!</string>
+    <string name="becoming_a_donor_greeting_msg">Thanks for taking this step!</string>
+    <string name="shoutout_creation_successfully_title">Success</string>
+    <string name="shoutout_creation_success_msg">Shoutout Created successfully, we hope all the best for you and your family</string>
+    <string name="create_shoutout_label">Create shoutout</string>
+    <string name="donate_label">Donate</string>
+    <string name="profile_header_user_name">User Name</string>
+    <string name="profile_header_user_email_com">authModel@email.com</string>
+    <string name="search_for_donors_fab_label">Search for donors</string>
+    <string name="search_donors_label">Search</string>
+    <string name="existed_donor_dialog_text_msg">You already applied for donating!</string>
+    <string name="existed_donor_dialog_title_msg">Oops…</string>
+    <string name="join_donors_sub_text">Join the community of donors with a single click!</string>
+    <string name="search_donors_sub_text">Search for nearby donors</string>
+    <string name="shoutout_sub_text">Create a shoutout and notify the community to get help!</string>
+    <string name="settings_label">Settings</string>
+    <string name="notification_key" translatable="false">notification_key</string>
+    <string name="notification_summary_on">On</string>
+    <string name="notification_summary_off">Off</string>
+    <string name="arabic_language_name">Arabic</string>
+    <string name="english_language_name">English</string>
+
+    <string name="arabic_language_value" translatable="false">ar</string>
+    <string name="english_language_value" translatable="false">en</string>
+    <string name="language_key" translatable="false">language_key</string>
+    <string name="notification_preference_label">Notifications</string>
+    <string name="language_preference_summary">Change Language</string>
+    <string name="language_preference_label">Language</string>
+    <string name="settings_action_bar_label">Settings</string>
+    <string name="donate_activity_label">Donate</string>
+    <string name="login_activity_label">Login</string>
+    <string name="register_activity_label">Register</string>
+    <string name="search_activity_label">Search for donors</string>
+    <string name="shoutout_activity_label">Create Shoutout</string>
+    <string name="whatsapp_error_msg">you don\'t have whatsApp</string>
+    <string name="hi_share_shoutout_sms">Hi</string>
+    <string name="can_help_share_shoutout_msg">, I can Help!</string>
+    <string name="share_title">Share this shoutout</string>
+    <string name="hey_there_share_shoutout_first_part">Hey there,</string>
+    <string name="hey_thee_share_shoutout_second_part"> is need your help with blood donation!  contact him through </string>
+    <string name="hi_donor_sms_first_part">Hi</string>
+    <string name="hi_donor_sms_second_part">, I need Help!</string>
+    <string name="about_activity_label">About</string>
+    <string name="about_menu_label">About</string>
+    <string name="about_label">Blood bank - Arish is a free online service that matches blood donors and patients in need of blood, based on location and blood type and through social media platforms. donors can apply through the blood bank database application with very easy and little steps. so the patients could search across the database for donors have the same blood type and living in the same address.</string>
+    <string name="logout_menu_label">Logout</string>
+    <string name="contact_us_label">Contact us:</string>
+
+
+</resources>

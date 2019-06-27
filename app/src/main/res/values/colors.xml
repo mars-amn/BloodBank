@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+    <color name="primaryColor">#e81e62</color>
+    <color name="primaryDarkColor">#af0039</color>
+    <color name="secondaryColor">#ad1457</color>
+    <color name="secondaryLightColor">#e35183</color>
+    <color name="secondaryDarkColor">#78002e</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="registerBackgroundColor">#fafafa</color>
+</resources>

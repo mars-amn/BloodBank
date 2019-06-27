@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="abdullah.elamien.bloodbank.ui.ShoutoutCreationActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:titleTextColor="@color/primaryDarkColor" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/shoutoutParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:focusableInTouchMode="true">
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/loadingIndicator"
+                    style="@style/SpinKitView.Large.FadingCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/loading_indicator_margin"
+                    android:visibility="gone"
+                    app:SpinKit_Color="@color/secondaryColor"
+                    app:layout_constraintBottom_toTopOf="@+id/shoutoutCreateButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfileImage"
+                    android:layout_width="@dimen/shoutout_creation_image_width"
+                    android:layout_height="@dimen/shoutout_creation_image_height"
+                    android:layout_margin="@dimen/shoutout_creation_image_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/shoutoutUserName"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/shoutout_creation_input_name_height"
+                    android:layout_marginStart="@dimen/shoutout_creation_input_name_margin_start"
+                    android:layout_marginTop="@dimen/shoutout_creation_input_name_margin_top"
+                    android:layout_marginEnd="@dimen/shoutout_creation_input_name_margin_end"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/shoutout_name_hint"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/shoutoutUserPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/shoutout_creation_input_phone_height"
+                    android:layout_margin="@dimen/shoutout_creation_input_phone_margin"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/shoutout_phone_number_hint"
+                    android:inputType="phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+                    app:layout_constraintTop_toBottomOf="@+id/shoutoutUserName" />
+
+                <EditText
+                    android:id="@+id/shoutoutUserAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/shoutout_creation_input_address_height"
+                    android:layout_marginStart="@dimen/shoutout_creation_input_address_margin_start"
+                    android:layout_marginTop="@dimen/shoutout_creation_input_address_margin_top"
+                    android:layout_marginEnd="@dimen/shoutout_creation_input_address_margin_end"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/shoutout_address_hint"
+                    android:inputType="text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoutoutUserPhone" />
+
+                <EditText
+                    android:id="@+id/shoutoutUserDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/shoutout_creation_input_description_height"
+                    android:layout_marginStart="@dimen/shoutout_creation_input_description_margin_start"
+                    android:layout_marginTop="@dimen/shoutout_creation_input_description_margin_top"
+                    android:layout_marginEnd="@dimen/shoutout_creation_input_description_margin_end"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/shoutout_description_hint"
+                    android:inputType="textMultiLine"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoutoutUserAddress" />
+
+                <TextView
+                    android:id="@+id/pickACityLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/shoutout_creation_label_pik_city_margin_start"
+                    android:layout_marginTop="@dimen/shoutout_creation_label_pik_city_margin_top"
+                    android:text="@string/pick_a_city_shoutout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/shoutoutUserDescription" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/addressChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_address_chip_margin"
+                    app:chipSpacing="@dimen/shoutout_creation_address_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickACityLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/arishChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alarish_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bearAlAbdChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bear_al_abd_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/nekhelChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nekhel_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/sheikhZouidChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sheikh_zould_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/rafahChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rafah_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/hasanaChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hasana_chip_label" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/pickBloodTypeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/pick_a_blood_type_label"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addressChipGroup" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/bloodTypeChipGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_blood_type_chip_margin"
+                    android:layout_marginTop="@dimen/shoutout_creation_blood_type_chip_margin_top"
+                    app:chipSpacing="@dimen/shoutout_creation_blood_type_chip_chip_spacing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pickBloodTypeLabel"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/aMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/bMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/b_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/oMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/o_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abPlusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_plus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/abMinusChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ab_minus_blood_type_chip_label" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/allBloodTypesChip"
+                        style="@style/chipStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_blood_type_chip_label" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/shoutoutCreateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/shoutout_creation_button_margin"
+                    android:background="@drawable/button_background"
+                    android:onClick="@{handlers::onCreateShoutoutClick}"
+                    android:text="@string/create_shoutout_button_label"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondaryTextColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bloodTypeChipGroup" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/shoutoutCreationGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:constraint_referenced_ids="shoutoutCreateButton,
+bloodTypeChipGroup,addressChipGroup,pickBloodTypeLabel,pickACityLabel,
+shoutoutUserDescription,shoutoutUserAddress,shoutoutUserPhone,
+shoutoutUserName,userProfileImage" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
