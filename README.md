@@ -5,7 +5,7 @@ BloodBank was developed with MVVM architectural design pattern and multiple tech
 
 The project works in limited Governorate 'North Sinai' and it can be easily adjusted for any other place, all you have to do is to change the needed values in `strings.xml`
 
-| App Notifications  |HomeActivity "Shoutouts"| SearchActivity | DetailsActivity |
+| App Notifications  |HomeActivity "Shoutouts"| SearchActivity | SettingsActivity |
 | ------------- |--------------| ------------- |------------- |
 | ![App Notifications](https://github.com/AbduallahAtta/BloodBank/blob/master/screenshots/app%20notifications.jpg)| ![HomeActivity "Shoutouts"](https://github.com/AbduallahAtta/BloodBank/blob/master/screenshots/home.jpg)| ![SearchActivity](https://github.com/AbduallahAtta/BloodBank/blob/master/screenshots/search.jpg)| ![SettingsActivity](https://github.com/AbduallahAtta/BloodBank/blob/master/screenshots/settings.jpg)
 
