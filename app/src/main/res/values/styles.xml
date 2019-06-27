@@ -1,0 +1,124 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="fontFamily">@font/cairo</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="AppStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="fontFamily">@font/cairo</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+    </style>
+
+    <style name="settingsActivityStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="fontFamily">@font/cairo</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+    </style>
+
+    <style name="registerLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/register_label_margin_start</item>
+        <item name="android:layout_marginLeft">@dimen/register_label_margin_left</item>
+        <item name="android:layout_marginTop">@dimen/register_label_margin_top</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Headline</item>
+        <item name="android:textColor">@color/secondaryDarkColor</item>
+        <item name="android:textSize">@dimen/register_label_text_size</item>
+    </style>
+
+    <style name="registerNameStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/register_email_edittext_height</item>
+        <item name="android:layout_margin">@dimen/register_email_edittext_margin</item>
+        <item name="background">@drawable/edittext_background</item>
+        <item name="android:drawablePadding">@dimen/drawable_edittext_padding</item>
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:padding">@dimen/register_email_edittext_padding</item>
+    </style>
+
+    <style name="registerEmailStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/register_email_edittext_height</item>
+        <item name="android:layout_margin">@dimen/register_email_edittext_margin</item>
+        <item name="background">@drawable/edittext_background</item>
+        <item name="android:drawablePadding">@dimen/drawable_edittext_padding</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:padding">@dimen/register_email_edittext_padding</item>
+    </style>
+
+    <style name="registerPasswordInputLayoutStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_password_input_layout_margin</item>
+    </style>
+
+    <style name="registerPasswordEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/register_eddittext_password_height</item>
+        <item name="background">@drawable/edittext_background</item>
+        <item name="android:drawablePadding">@dimen/drawable_edittext_padding</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:padding">@dimen/register_eddittext_password_padding</item>
+    </style>
+
+    <style name="registerPasswordConfirmInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/register_password_confirm_margin</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="registerPasswordConfirmEditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/register_password_confirm_height</item>
+        <item name="background">@drawable/edittext_background</item>
+        <item name="android:drawablePadding">@dimen/drawable_edittext_padding</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:padding">@dimen/register_password_confirm_padding</item>
+    </style>
+
+    <style name="existedMembershipLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/existed_membership_margin_top</item>
+        <item name="android:layout_marginEnd">@dimen/existed_membership_margin_end</item>
+        <item name="android:layout_marginRight">@dimen/existed_membership_margin_right</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/register_button_margin</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="chipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:checkable">true</item>
+        <item name="chipBackgroundColor">@drawable/chip_background</item>
+        <item name="chipStrokeWidth">0.5dp</item>
+        <item name="chipStrokeColor">@color/secondaryDarkColor</item>
+        <item name="android:textColor">@color/secondaryDarkColor</item>
+    </style>
+
+</resources>
