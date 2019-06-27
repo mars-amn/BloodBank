@@ -43,7 +43,6 @@ The project works in limited Governorate 'North Sinai' and it can be easily adju
 
 All ready to go, just clone the repository, setup your firebase project and deploy the function in [`index.js`](https://github.com/AbduallahAtta/BloodBank/blob/master/index.js) file by following these steps [Get started with Cloud Functions](https://firebase.google.com/docs/functions/get-started)
 
------
 # License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
