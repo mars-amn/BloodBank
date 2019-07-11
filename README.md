@@ -1,7 +1,7 @@
 # BloodBank
 BloodBank is an Android project that helps people and it could save their lives by sharing and asking for someone to help them with donating blood.
 
-BloodBank was developed with MVVM architectural design pattern and multiple technologies such as Android Architecture Components - DataBinding - Dagger2 - Firebase Authentication - Firebase Firestore - Firebase Cloud Functions & Crashlytics
+BloodBank was developed with MVVM architectural design pattern and multiple technologies such as Android Architecture Components - DataBinding - Koin - Firebase Authentication - Firebase Firestore - Firebase Cloud Functions & Crashlytics
 
 The project works in limited Governorate 'North Sinai' and it can be easily adjusted for any other place, all you have to do is to change the needed values in `strings.xml`
 
@@ -31,7 +31,7 @@ The project works in limited Governorate 'North Sinai' and it can be easily adju
 
 **Third-party libraries**
 * [EventBus](http://greenrobot.org/eventbus/)
-* [Dagger2](https://github.com/google/dagger)
+* [Koin](https://github.com/InsertKoinIO/koin)
 * [Glide](https://github.com/bumptech/glide)
 * [CircleImageView](https://github.com/hdodenhof/CircleImageView)
 * [Ahoy onbroading](https://github.com/codemybrainsout/ahoy-onboarding)
