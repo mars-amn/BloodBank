@@ -78,7 +78,6 @@
     <dimen name="pick_blood_type_label_margin_left">16dp</dimen>
     <dimen name="pick_blood_type_label_margin_top">16dp</dimen>
     <dimen name="pick_address_label_margin_start">16dp</dimen>
-    <dimen name="pick_address_label_margin_left">16dp</dimen>
     <dimen name="donor_phone_number_margin">8dp</dimen>
     <dimen name="donor_age_margin">8dp</dimen>
     <dimen name="donor_name_margin">8dp</dimen>
@@ -90,10 +89,8 @@
     <dimen name="donor_bio_edittext_height">40dp</dimen>
     <dimen name="loading_indicator_margin">8dp</dimen>
     <dimen name="profile_header_user_name_margin_start">16dp</dimen>
-    <dimen name="profile_header_user_name_margin_left">16dp</dimen>
     <dimen name="profile_header_user_name_margin_top">8dp</dimen>
     <dimen name="profile_header_user_email_margin_start">16dp</dimen>
-    <dimen name="profile_header_user_email_margin_left">16dp</dimen>
     <dimen name="profile_header_user_email_margin_top">8dp</dimen>
     <dimen name="profile_header_user_image_width">100dp</dimen>
     <dimen name="profile_header_user_image_height">100dp</dimen>

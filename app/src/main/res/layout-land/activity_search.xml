@@ -44,7 +44,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/pick_address_label_margin_start"
-                    android:layout_marginLeft="@dimen/pick_address_label_margin_left"
                     android:layout_marginTop="8dp"
                     android:text="@string/pick_a_city_shoutout"
                     app:layout_constraintStart_toStartOf="parent"

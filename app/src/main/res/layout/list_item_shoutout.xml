@@ -41,10 +41,9 @@
                 android:layout_width="@dimen/list_item_shoutout_image_width"
                 android:layout_height="@dimen/list_item_shoutout_image_height"
                 android:layout_margin="@dimen/list_item_shoutout_image_margin"
-                android:src="@drawable/app_icon"
+                app:imageUrl="@{imageUrl}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:profileImage="@{imageUrl}" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/listItemShoutoutUserName"
